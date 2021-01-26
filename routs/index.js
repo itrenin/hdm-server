@@ -8,7 +8,7 @@ router
   .get('/:id', (req, res) => {
     let id = req.params.id
     res.send(`Отправил данные с параметром: ${id}`)
-    console.log(id)
+    //console.log(id)
   })
 
 module.exports = router
