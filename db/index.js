@@ -19,7 +19,7 @@ const models = {
     Status: statusModel(sequelize, Sequelize.DataTypes),
     Issue: issueModel(sequelize, Sequelize.DataTypes)
 }
-//const models = {}
+//let models = {}
 //const modelsFolderPath = './models'
 
 

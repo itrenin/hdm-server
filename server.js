@@ -3,6 +3,9 @@ const path = require('path')
 const { nextTick } = require('process')
 require('dotenv').config()
 
+const mainRouter = require('./routs/index')
+const userRouter = require('./routs/user.js')
+
 const port = process.env.PORT || 3000
 const app = express()
 
@@ -14,7 +17,10 @@ db.authenticate()
   })
   .catch(console.error)
 // end of db connect
-app.use('/', require('./routs/index'))
+
+// routs
+app.use('/', mainRouter)
+app.use('/users', userRouter)
 
 app.use((req, res, next) => {
   var err = new Error('Not found')
